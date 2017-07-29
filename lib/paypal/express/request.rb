@@ -15,6 +15,7 @@ module Paypal
         end
 
         params[:ALLOWNOTE] = 0 if options[:allow_note] == false
+        params[:NOTIFYURL] = options[:notify_url]
 
         {
           :solution_type => :SOLUTIONTYPE,
@@ -24,8 +25,7 @@ module Paypal
           :locale        => :LOCALECODE,
           :logo          => :LOGOIMG,
           :cart_border_color => :CARTBORDERCOLOR,
-          :payflow_color => :PAYFLOWCOLOR,
-          :notify_url   =>  :NOTIFYURL
+          :payflow_color => :PAYFLOWCOLOR
         }.each do |option_key, param_key|
           params[param_key] = options[option_key] if options[option_key]
         end
