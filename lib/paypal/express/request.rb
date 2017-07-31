@@ -4,10 +4,11 @@ module Paypal
 
       # Common
 
-      def setup(payment_requests, return_url, cancel_url, options = {})
+      def setup(payment_requests, return_url, cancel_url, notify_url, options = {})
         params = {
           :RETURNURL => return_url,
-          :CANCELURL => cancel_url
+          :CANCELURL => cancel_url,
+          :NOTIFYURL => notify_url
         }
         if options[:no_shipping]
           params[:REQCONFIRMSHIPPING] = 0
