@@ -16,7 +16,7 @@ module Paypal
         end
 
         params[:ALLOWNOTE] = 0 if options[:allow_note] == false
-        params[:NOTIFYURL] = options[:notify_url]
+        # params[:NOTIFYURL] = options[:notify_url]
 
         {
           :solution_type => :SOLUTIONTYPE,

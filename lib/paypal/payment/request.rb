@@ -36,6 +36,7 @@ module Paypal
           #  notify_url works only when DoExpressCheckoutPayment called.
           #  recurring payment doesn't support dynamic notify_url.
           :"PAYMENTREQUEST_#{index}_NOTIFYURL" => self.notify_url,
+          :"NOTIFYURL" => self.notify_url,
           :"L_BILLINGTYPE#{index}" => self.billing_type,
           :"L_BILLINGAGREEMENTDESCRIPTION#{index}" => self.billing_agreement_description,
           # FOR PARALLEL PAYMENT
